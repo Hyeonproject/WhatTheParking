@@ -4,65 +4,43 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class DBConnect {
-    private String driver = "com.mysql.cj.jdbc.Driver";
-    private String url = "jdbc:mysql://52.79.239.76:3306/wtp_test?serverTimezone=UTC";
-    private String user = "LEE";
-    private String pwd = "oradb";
-    private String dbParkingTable = "wtp_parking";
+    public static final String databaseDriver =  "com.mysql.cj.jdbc.Driver";
+    public static final String databaseUrl = "jdbc:mysql://52.79.239.76:3306/wtp_test?serverTimezone=UTC";
+    public static final String databaseUser = "LEE";
+    public static final String databasePassword = "oradb";
+    public static PreparedStatement preparedStatement;
+    public static ResultSet resultSet;
+    public static Connection connection = null;
 
-    private Connection conn = null;
-    private Statement stmt = null;
+    public static void main(String[] args) {
+//        /* Connection TEST
+        connect();
+        // Close TEST
+        close();
 
-    public void connect() { //연결 확인
+    }
+
+    public static Connection connect() { //DB CONNECT
         try {
-            conn = DriverManager.getConnection(url,user,pwd);
-            System.out.println("연결 완료");
+            Class.forName(databaseDriver);
+            connection = DriverManager.getConnection(databaseUrl, databaseUser, databasePassword);
+            if (connection != null) System.out.println("Connection Succeed");
+            else System.out.println("Connection Failed");
+        } catch (Exception e) {
+            System.err.println("Connection Error! : " + e.getMessage());
+            e.printStackTrace();
+        }
+        return connection;
+    }
+
+    public static void close() { //DB USE AFTER CLOSE
+        try {
+            if (connection != null) {
+                connection.close();
+            }
         } catch (SQLException e) {
+            System.err.println("Connection Closing Failed! : " + e.getMessage());
             e.printStackTrace();
         }
-    }
-
-    public void disconnect() { //연결 끊기
-        try{
-            if(stmt != null){
-                stmt.close();
-            }
-            if(conn != null){
-                conn.close();
-            }
-
-            System.out.println("연결 헤재");
-        }
-        catch (SQLException e){
-            e.printStackTrace();
-        }
-    }
-
-    public Integer parkingCount(String parking_no){
-        Integer count = null;
-
-        connect(); //db 연결
-
-        //sql 구문
-        StringBuilder sb = new StringBuilder("select count(*) from wtp_parking where parkino = ?");
-        sb.append(" where parking_no = '");
-        sb.append(parking_no);
-        sb.append("';");
-
-        try{
-            stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sb.toString());
-            count = rs.getInt(0);
-            rs.next();
-            rs.close();
-        }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }
-        finally {
-            disconnect();
-        }
-
-        return count;
     }
 }
