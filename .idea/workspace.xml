@@ -7,19 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81178dd2-d29f-4148-b0be-ad0c51e5ada7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/57055b22-88e8-43fb-9e24-15802084b12b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/57055b22-88e8-43fb-9e24-15802084b12b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking_Lot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Parking_Lot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Parking_Lot_war_exploded/WEB-INF/classes/example/DBConnect.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Parking_Lot_war_exploded/WEB-INF/classes/example/DBConnect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Parking_Lot_war_exploded/WEB-INF/classes/example/MainControl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Parking_Lot_war_exploded/WEB-INF/classes/example/MainControl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Parking_Lot_war_exploded/WEB-INF/classes/example/ParkingBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Parking_Lot_war_exploded/WEB-INF/classes/example/ParkingBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Parking_Lot/example/DBConnect.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Parking_Lot/example/DBConnect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/example/DBDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/example/DBDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/example/MainControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/example/MainControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/parking.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/parking.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/parking2.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/parking2.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,11 +255,6 @@
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
             </expand>
             <select />
           </treeState>
@@ -305,6 +288,7 @@
       <workItem from="1576810766188" duration="22766000" />
       <workItem from="1576839532744" duration="2125000" />
       <workItem from="1576841999812" duration="4751000" />
+      <workItem from="1576850661781" duration="35000" />
     </task>
     <servers />
   </component>
@@ -427,10 +411,10 @@
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
     <state x="569" y="101" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1576841195213" />
-    <state x="656" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1576842000300">
+    <state x="656" y="346" key="com.intellij.ide.util.TipDialog" timestamp="1576850661253">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="346" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576842000300" />
+    <state x="656" y="346" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1576850661253" />
     <state x="548" y="142" key="refactoring.ChangeSignatureDialog" timestamp="1576840959502">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
