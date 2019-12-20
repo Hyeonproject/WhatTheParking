@@ -10,12 +10,14 @@
   <head>
     <meta charset="utf-8">
     <title>메인 타이틀 이자 카카오 지도 시작</title>
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <script src="js/bootstrap.min.js"></script>
   </head>
   <body>
-  <div>
+  <div class="container">
     <h1>What the Parking</h1>
   </div>
-  <div id="map" style="width: 90%; height: 90%;"></div>
+  <div class="container" id="map" style="width: 90%; height: 90%;"></div>
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d7aa1f48cb081dfe6bdc2e9c4e7beb61&libraries=services"></script>
   <script>
       var mapContainer = document.getElementById('map'), // 지도를 표시할 div
@@ -82,8 +84,7 @@
       marker.setMap(map);
   </script>
 
-  <div>
-
+  <div class="container">
     <a href="categoly_parking.jsp">주의 카테고리 보기</a>
   </div>
   </body>

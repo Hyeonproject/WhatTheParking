@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="Parking_Lot:war exploded">
+  <artifact type="war" build-on-make="true" name="Parking_Lot:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/Parking_Lot_war_exploded</output-path>
-    <root id="root">
+    <root id="archive" name="Parking_Lot_war exploded.war">
       <element id="javaee-facet-resources" facet="Parking_Lot/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
