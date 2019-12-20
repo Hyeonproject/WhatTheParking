@@ -7,6 +7,14 @@
         <element id="directory" name="classes">
           <element id="module-output" name="Parking_Lot" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="mysql-connector-java-8.0.18" />
+          <element id="library" level="project" name="taglibs-standard-compat-1.2.5" />
+          <element id="library" level="project" name="taglibs-standard-impl-1.2.5" />
+          <element id="library" level="project" name="taglibs-standard-jstlel-1.2.5" />
+          <element id="library" level="project" name="taglibs-standard-spec-1.2.5" />
+          <element id="library" level="project" name="JAX-WS-Apache Axis" />
+        </element>
       </element>
     </root>
   </artifact>

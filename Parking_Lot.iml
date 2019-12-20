@@ -20,11 +20,15 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="13" jdkType="JavaSDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="JAX-WS-Apache Axis" level="project" />
+    <orderEntry type="library" exported="" name="JAX-WS-Apache Axis" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="Tomcat 9.0.29" level="application_server_libraries" />
     <orderEntry type="library" exported="" name="mysql-connector-java-8.0.18" level="project" />
     <orderEntry type="library" exported="" name="Java EE 6-Java EE 6" level="project" />
+    <orderEntry type="library" exported="" name="taglibs-standard-compat-1.2.5" level="project" />
+    <orderEntry type="library" exported="" name="taglibs-standard-impl-1.2.5" level="project" />
+    <orderEntry type="library" exported="" name="taglibs-standard-jstlel-1.2.5" level="project" />
+    <orderEntry type="library" exported="" name="taglibs-standard-spec-1.2.5" level="project" />
   </component>
 </module>

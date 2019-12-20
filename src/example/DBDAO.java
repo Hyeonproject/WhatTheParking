@@ -28,18 +28,22 @@ public class DBDAO extends DBConnect {
             rs = pstmt.executeQuery();
             while (rs.next()) {
                 ParkingBean parkingBean = new ParkingBean();
-                parkingBean.setParking_no("paking_no");
-                parkingBean.setA1("A1");
-                parkingBean.setA2("A2");
-                parkingBean.setA3("A3");
-                parkingBean.setA4("A4");
-                parkingBean.setA5("A5");
-                parkingBean.setA6("A6");
-                parkingBean.setA7("A7");
-                parkingBean.setA8("A8");
-                parkingBean.setA9("A9");
-                parkingBean.setA10("A10");
+                parkingBean.setParking_no(rs.getString("parking_no"));
+                parkingBean.setA1(rs.getString("A1"));
+                parkingBean.setA2(rs.getString("A2"));
+                parkingBean.setA3(rs.getString("A3"));
+                parkingBean.setA4(rs.getString("A4"));
+                parkingBean.setA5(rs.getString("A5"));
+                parkingBean.setA6(rs.getString("A6"));
+                parkingBean.setA7(rs.getString("A7"));
+                parkingBean.setA8(rs.getString("A8"));
+                parkingBean.setA9(rs.getString("A9"));
+                parkingBean.setA10(rs.getString("A10"));
                 list.add(parkingBean);
+                for (int i = 0; i < list.size(); i++) {
+                    System.out.println(list.get(i).getA1());
+                }
+
             }
         } catch (Exception e) {
             e.printStackTrace();

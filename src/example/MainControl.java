@@ -23,7 +23,10 @@ public class MainControl extends HttpServlet {
         if(pathInfo.equals("/parking1")){
             DBDAO dbdao = DBDAO.getInstance();
             ArrayList<ParkingBean> parkingbeans = dbdao.getall();
-            session.setAttribute("parkingbeans",parkingbeans);
+            for (int i = 0; i < parkingbeans.size(); i++) {
+                System.out.println(parkingbeans.get(i).getA1());
+            }
+            request.setAttribute("parkingbeans",parkingbeans);
             viewName = "parking.jsp";
         }
         else if (pathInfo.equals("/parking2")){
