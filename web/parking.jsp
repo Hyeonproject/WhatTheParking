@@ -14,12 +14,14 @@
 <html>
 <head>
     <title>What The Parking</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
     <c:set var = "count" value ="0"/>
     <h1>What the Parking</h1>
     <div>
-        아림 주차장 현항 :<br>
+        주차장 현항 :<br>
         <table border="1">
             <thead>
                 <tr>

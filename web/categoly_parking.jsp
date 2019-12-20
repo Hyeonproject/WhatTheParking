@@ -9,13 +9,20 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>메인 타이틀 이자 카카오 지도 시작</title>
+    <title>What the Parking</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
   </head>
   <body>
-  <div>
+  <div class="container">
     <h1>What the Parking</h1>
+    <ul class="nav nav-pills">
+      <li role="presentation"><a href="index.jsp">자신 차량 주차장 현황</a></li>
+      <li role="presentation" class="active"><a href="categoly_parking.jsp">주의 주차장 전체 현황</a></li>
+      <li role="presentation"><a href="">주차장을 통한 데이터 분석</a></li>
+    </ul>
   </div>
-  <div id="map" style="width: 90%; height: 90%;"></div>
+  <div class="container" id="map" style="width: 80%; height: 80%;"></div>
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d7aa1f48cb081dfe6bdc2e9c4e7beb61&libraries=services"></script>
   <script>
       // 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
@@ -62,7 +69,7 @@
           });
       }
 
-      var imageSrc = 'http://localhost:8080/Parking_Lot_war_exploded/resource/me.png', // 마커이미지의 주소입니다
+      var imageSrc = 'http://localhost:8080/resource/me.png', // 마커이미지의 주소입니다
               imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
               imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
 

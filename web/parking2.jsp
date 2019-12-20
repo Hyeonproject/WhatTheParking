@@ -21,7 +21,7 @@
 <c:set var = "count" value ="0"/>
 <h1>What the Parking</h1>
 <div>
-    아이온 시티 주차장 현항 :<br>
+    주차장 현항 :<br>
     <table border="1">
         <thead>
         <tr>
