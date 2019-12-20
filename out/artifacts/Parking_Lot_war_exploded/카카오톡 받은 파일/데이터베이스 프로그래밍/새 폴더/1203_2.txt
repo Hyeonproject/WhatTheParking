@@ -1,0 +1,19 @@
+SELECT studno , name , height , dname, part
+FROM student JOIN department ON (deptno1 =deptno)
+WHERE SUBSTR(jumin,7,1)=2
+ORDER BY height DESC;
+
+SELECT d1.deptno 부서번호, d1.dname
+FROM department d1 JOIN department d2 ON(d1.part = d2.deptno)
+WHERE  d2.part = (SELECT deptno
+		FROM department
+		where dname = '공과대학')
+
+SELECT name, position, ((pay+NVL(bonus,0))*10000) pay, dname, part
+	FROM professor NATURAL JOIN (SELECT d1.deptno, d1.dname, d1.part
+ 			FROM department d1 JOIN department d2 ON(d1.part = d2.deptno)
+			WHERE  d2.part = (SELECT deptno
+				FROM department
+				where dname = '공과대학'))
+ORDER BY position
+/

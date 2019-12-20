@@ -1,0 +1,39 @@
+CREATE OR REPLACE PROCEDURE display_stud2
+	(p_college department.dname%TYPE)
+IS
+	v_max NUMBER;
+	v_deptno department.deptno%TYPE;
+CURSOR c1 IS
+	SELECT studno , name , height , d1.dname, d1.part
+	FROM student JOIN department d1 ON (deptno1 =d1.deptno)
+		JOIN department d2 ON (d1.part = d2.deptno)
+	WHERE SUBSTR(jumin,7,1)=2 AND d2.part = v_deptno
+              ORDER BY height DESC;
+BEGIN
+	SELECT deptno  INTO v_deptno
+	FROM department
+	WHERE dname = p_college;
+
+	FOR stud_rec IN c1
+	LOOP
+		SELECT max(height)  INTO v_max
+		FROM student JOIN department ON (deptno1=deptno)
+		WHERE SUBSTR(jumin,7,1)=2 AND part=stud_rec.part;
+
+		IF(v_max=stud_rec.height ) THEN
+		DBMS_OUTPUT.PUT_LINE( stud_rec.studno ||' 학번 '|| stud_rec.name||' 이름 '||stud_rec.height ||' 키 '|| stud_rec.dname||' 학과명 ' );
+		END IF;
+	END LOOP;
+EXCEPTION
+	WHEN  NO_DATA_FOUND THEN
+	DBMS_OUTPUT.PUT_LINE(' 해당 번호는 없습니다.');
+END;
+/
+
+
+SET SERVEROUTPUT ON 
+EXEC display_stud2('College of Engineering');
+EXEC display_stud2('College of Liberal Arts');
+SET SERVEROUTPUT ON 
+EXEC display_stud2('공과대학');
+EXEC display_stud2('인문대학');

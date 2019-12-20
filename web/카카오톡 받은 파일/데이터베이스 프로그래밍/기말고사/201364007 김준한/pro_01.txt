@@ -1,0 +1,33 @@
+SET SERVEROUTPUT ON;
+
+CREATE OR REPLACE PROCEDURE pro_01
+	(v_emptype emp2.emp_type%TYPE)
+IS
+	v_deptno department.deptno%TYPE;
+	v_emp NUMBER;
+CURSOR c1 IS
+	SELECT empno, name, position, dname, area
+	FROM emp2 e JOIN dept2 d
+	ON e.deptno = d.dcode
+	WHERE emp_type = v_emptype;
+BEGIN
+	SELECT COUNT(*)
+	INTO v_emp
+	FROM emp2
+	WHERE emp_type = v_emptype;
+
+	IF v_emp != 0 THEN
+		DBMS_OUTPUT.PUT_LINE(v_emptype || ' ' || v_emp || '명');
+		FOR emp_rec IN c1
+		LOOP
+			DBMS_OUTPUT.PUT_LINE(emp_rec.empno || ' ' || emp_rec.name || ' '|| emp_rec.position || ' ' || emp_rec.dname || ' ' || emp_rec.area);
+		END LOOP;
+	ELSE
+		DBMS_OUTPUT.PUT_LINE('해당 학과가 없습니다.');
+	END IF;
+EXCEPTION
+	WHEN NO_DATA_FOUND THEN
+		DBMS_OUTPUT.PUT_LINE('해당 학과가 없습니다.');
+END ;
+/
+

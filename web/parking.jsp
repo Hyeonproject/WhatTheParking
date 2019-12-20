@@ -1,4 +1,7 @@
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="example.ParkingBean" %>
+<%@ page import="java.net.InterfaceAddress" %>
+<%@ page import="com.sun.tools.javac.tree.JCTree" %><%--
   Created by IntelliJ IDEA.
   User: hyeon
   Date: 2019-12-19
@@ -15,13 +18,19 @@
 <body>
     <%
         request.setCharacterEncoding("utf-8");
-        int parking_count = (int)session.getAttribute("count");
+        ArrayList<ParkingBean> parkingbean = (ArrayList<ParkingBean>) session.getAttribute("parkingbeans");
+        int count = 0;
+
+        for (ParkingBean i : parkingbean) {
+
+            
+        }
     %>
     <h1>What the Parking</h1>
     <div>
         아람 주차장 현항 :<br>
-        사용중 : <%= parking_count%> <br>
-        남은 자리 : <%= 10 - parking_count%> <br>
+        사용중 : <%= count %> <br>
+        남은 자리 : <%= 10 - count %> <br>
     </div>
 </body>
 </html>

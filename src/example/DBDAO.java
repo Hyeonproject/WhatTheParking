@@ -8,8 +8,7 @@ import java.util.ArrayList;
 
 public class DBDAO extends DBConnect {
 
-    private DBDAO() {
-    }
+    private DBDAO() { }
 
     private static DBDAO instance = new DBDAO();
 

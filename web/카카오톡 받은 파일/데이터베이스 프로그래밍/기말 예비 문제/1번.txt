@@ -1,0 +1,30 @@
+EXEC pro_01('Computer Engineering');
+EXEC pro_01('Electronic Engineering');
+
+
+SQL> EXEC pro_01('Computer Engineering');
+Computer Engineering 학생은 총 4명입니다.
+학번 : 9411 학생이름 : James Seo 학년 : 4
+학번 : 9511 학생이름 : Billy Crystal 학년 : 3
+학번 : 9611 학생이름 : Richard Dreyfus 학년 : 2
+학번 : 9711 학생이름 : Danny Devito 학년 : 1
+Computer Engineering 교수는 총 3명입니다.
+교수번호 : 1001 교수이름 : Audie Murphy 직급 : a full professor
+교수번호 : 1002 교수이름 : Angela Bassett 직급 : assistant professor
+교수번호 : 1003 교수이름 : Jessica Lange 직급 : instructor
+
+PL/SQL procedure successfully completed.
+
+SQL> EXEC pro_01('Electronic Engineering');
+Electronic Engineering 학생은 총 6명입니다.
+학번 : 9414 학생이름 : Demi Moore 학년 : 4
+학번 : 9515 학생이름 : Macaulay Culkin 학년 : 3
+학번 : 9613 학생이름 : Wesley Snipes 학년 : 2
+학번 : 9614 학생이름 : Steve Martin 학년 : 2
+학번 : 9712 학생이름 : Sean Connery 학년 : 1
+학번 : 9713 학생이름 : Christian Slater 학년 : 1
+Electronic Engineering 교수는 총 2명입니다.
+교수번호 : 4001 교수이름 : Meryl Streep 직급 : a full professor
+교수번호 : 4002 교수이름 : Susan Sarandon 직급 : assistant professor
+
+PL/SQL procedure successfully completed.

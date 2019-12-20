@@ -1,0 +1,30 @@
+SELECT profno 교수번호, name 이름, position 직급, wage(profno) 월급
+FROM professor
+/
+
+
+SQL> SELECT profno 교수번호, name 이름, position 직급, wage(profno) 월급
+  2  FROM professor
+  3  /
+
+  교수번호 이름                 직급                       월급
+---------- -------------------- -------------------- ----------
+      1001 Audie Murphy         a full professor            780
+      1002 Angela Bassett       assistant professor         528
+      1003 Jessica Lange        instructor                  324
+      2001 Winona Ryder         instructor                  300
+      2002 Michelle Pfeiffer    assistant professor         516
+      2003 Whoopi Goldberg      a full professor            696
+      3001 Emma Thompson        a full professor            768
+      3002 Julia Roberts        assistant professor         456
+      3003 Sharon Stone         instructor                  348
+      4001 Meryl Streep         a full professor            840
+      4002 Susan Sarandon       assistant professor         396
+      4003 Nicole Kidman        assistant professor         432
+      4004 Holly Hunter         instructor                  312
+      4005 Meg Ryan             a full professor            696
+      4006 Andie Macdowell      instructor                  264
+      4007 Jodie Foster         assistant professor         384
+      9998 JUN HAN              a full professor            780
+      9999 ME RONG              a full professor            780
+

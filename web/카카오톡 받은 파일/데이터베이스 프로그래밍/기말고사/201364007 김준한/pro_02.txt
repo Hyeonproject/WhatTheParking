@@ -1,0 +1,25 @@
+SET SERVEROUTPUT ON;
+
+CREATE OR REPLACE TRIGGER delete_log
+	AFTER DELETE on emp2
+	FOR EACH ROW
+DECLARE
+	PRAGMA AUTONOMOUS_TRANSACTION;
+CURSOR c1 IS
+	SELECT empno, name, position, dname
+	FROM emp2 e JOIN dept2 d
+	ON e.deptno = d.dcode
+	WHERE empno = :old.empno;
+BEGIN
+	FOR emp_rec IN c1
+	LOOP
+		insert into emp_log(no, empno, ename, position, dname, logtime) 
+		values (log_seq.nextval, emp_rec.empno, emp_rec.name, emp_rec.position, emp_rec.dname, sysdate);
+	END LOOP;
+END;
+/
+
+
+
+
+

@@ -1,0 +1,32 @@
+CREATE OR REPLACE PROCEDURE maxpay_professor
+	(v_part department.dname%TYPE)
+IS
+	v_max NUMBER;
+
+	CURSOR c1 IS
+	SELECT name, position, (pay+NVL(bonus,0)) pay, dname, part
+	FROM professor NATURAL JOIN (SELECT d1.deptno, d1.dname, d2.part
+ 			FROM department d1 JOIN department d2 ON(d1.part = d2.deptno)
+			WHERE  d2.part = (SELECT deptno
+				FROM department
+				where dname = v_part));
+BEGIN
+
+	FOR p1 IN c1
+	LOOP
+		SELECT MAX(pay+NVL(bonus,0)) INTO v_max
+		FROM professor 
+ 		WHERE position = p1.position
+		AND deptno IN (SELECT d1.deptno
+ 			FROM department d1 JOIN department d2 ON(d1.part = d2.deptno)
+			WHERE  d2.part = p1.part);
+
+	IF(v_max=p1.pay ) THEN
+	     v_max := p1.pay * 10000;
+	     DBMS_OUTPUT.PUT_LINE(p1.name||'  '||p1.position||'  '||p1.dname||'  '||v_max);
+	END IF;
+	END LOOP;
+
+END;
+/
+exec maxpay_professor('공과대학')

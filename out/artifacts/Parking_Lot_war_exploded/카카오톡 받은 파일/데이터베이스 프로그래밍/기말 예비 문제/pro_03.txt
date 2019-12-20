@@ -1,0 +1,24 @@
+CREATE OR REPLACE FUNCTION wage
+	(f_profno professor.profno%TYPE)
+	RETURN NUMBER
+IS
+	v_pay professor.pay%TYPE;
+	v_bonus professor.bonus%TYPE;
+	v_bonus2 NUMBER;
+	v_tax NUMBER;
+	v_payment NUMBER;
+BEGIN
+	SELECT pay, NVL(bonus,0)
+	INTO v_pay, v_bonus
+	FROM professor
+	WHERE profno = f_profno;
+	
+	v_bonus2 := (v_pay + v_bonus)*0.5;
+	v_tax := (v_pay + v_bonus + v_bonus2)*0.2;
+	v_payment := v_pay + v_bonus + v_bonus2 - v_tax;
+
+	RETURN v_payment;
+END;
+/
+
+

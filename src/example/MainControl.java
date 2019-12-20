@@ -15,24 +15,21 @@ public class MainControl extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //1. init
         HttpSession session = request.getSession(); //세션 객체 불러오기
-        DBConnect db = (DBConnect)session.getAttribute("db");
-        if(db == null){ //session에 존재하지 않는 군
-            db = new DBConnect();
-            session.setAttribute("db",db);
-        }
 
         //2. dispatch request to processing component
         String pathInfo = request.getPathInfo();
         String viewName = "index.jsp"; //에러 뜨면 바로 보내게 하지만 나는 메인 페이지로 보내게
 
         if(pathInfo.equals("/parking1")){
-            int count = db.parkingCount("1");
-            session.setAttribute("count",count);
+            DBDAO dbdao = DBDAO.getInstance();
+            ArrayList<ParkingBean> parkingbeans = dbdao.getall();
+            session.setAttribute("parkingbeans",parkingbeans);
             viewName = "parking.jsp";
         }
         else if (pathInfo.equals("/parking2")){
-            int count = db.parkingCount("2");
-            session.setAttribute("count",count);
+            DBDAO dbdao = DBDAO.getInstance();
+            ArrayList<ParkingBean> parkingbeans = dbdao.getall();
+            session.setAttribute("parkingbeans",parkingbeans);
             viewName = "parking2.jsp";
         }
 

@@ -1,0 +1,41 @@
+WITH e
+AS (	SELECT d1.deptno, d1.dname 학과명
+	FROM department d1 JOIN department d2
+	ON d1.part = d2.deptno
+	WHERE (SELECT deptno FROM department WHERE dname='공과대학') IN (d1.part, d2.part)
+)
+SELECT name 이름, position 직급명, 학과명, pay+NVL(bonus,0) 급여
+FROM professor JOIN e
+USING (deptno)
+ORDER BY 급여 DESC
+/
+
+SQL> WITH e
+  2  AS (       SELECT d1.deptno, d1.dname 학과명
+  3     FROM department d1 JOIN department d2
+  4     ON d1.part = d2.deptno
+  5     WHERE (SELECT deptno FROM department WHERE dname='공과대학') IN (d1.part, d2.part)
+  6  )
+  7  SELECT name 이름, position 직급명, 학과명, pay+NVL(bonus,0) 급여
+  8  FROM professor JOIN e
+  9  USING (deptno)
+ 10  ORDER BY 급여 DESC
+ 11  /
+
+이름            직급명                   학과명                     급여
+--------------- ------------------------ -------------------- ----------
+심슨            정교수                   전자공학과                  700
+조인형          정교수                   컴퓨터공학과                650
+김도형          정교수                   소프트웨어공학과            640
+주승재          정교수                   멀티미디어공학과            580
+바비            정교수                   화학공학과                  580
+박승곤          조교수                   컴퓨터공학과                440
+김영조          조교수                   멀티미디어공학과            430
+나한열          조교수                   소프트웨어공학과            380
+박원범          조교수                   기계공학과                  360
+최슬기          조교수                   전자공학과                  330
+김현정          전임강사                 소프트웨어공학과            290
+송도권          전임강사                 컴퓨터공학과                270
+차범철          전임강사                 기계공학과                  260
+양선희          전임강사                 멀티미디어공학과            250
+
