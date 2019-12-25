@@ -3,11 +3,18 @@
 <head>
     <meta charset="utf-8">
     <title>데이터 분석을 통한 주차현황</title>
-    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-<h2 align="center">데이터 분석을 통한 주차현황</h2>
-<div id="map" style="width:900px; height:550px; margin: auto;"></div>
+<div class="container">
+    <h1>What the Parking</h1>
+    <ul class="nav nav-pills">
+        <li role="presentation"><a href="index.jsp">주의 주차장 전체 현황</a></li>
+        <li role="presentation" class="active"><a href="KakaoMaps.html">주차장을 통한 데이터 분석</a></li>
+    </ul>
+</div>
+<div id="map" style="width:1100px; height:750px; margin: auto;"></div>
 <p align="center">
     <button onclick="hideMarkers()">마커 감추기</button>
     <button onclick="showMarkers()">마커 보이기</button>

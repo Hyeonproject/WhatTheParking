@@ -14,15 +14,16 @@
 <html>
 <head>
     <title>What The Parking</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="js/bootstrap.min.js"></script>
+    <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
+    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+
 </head>
 <body>
     <c:set var = "count" value ="0"/>
-    <h1>What the Parking</h1>
-    <div>
+    <h1 class="container">What the Parking</h1>
+    <div class="container">
         주차장 현항 :<br>
-        <table border="1">
+        <table class="table" border="1">
             <thead>
                 <tr>
                     <th>1번구역</th>
@@ -64,9 +65,11 @@
         </c:forEach>
             </tbody>
         </table>
+        <div class="container">
         사용중 : <c:out value="${count}"/> <br>
         <c:set var="notCount" value="${3 - a1N - a2N -a3N}"/>
         빈자리 : <c:out value="${notCount}"/>
+        </div>
     </div>
 </body>
 </html>
